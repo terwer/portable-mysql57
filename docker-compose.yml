@@ -3,11 +3,11 @@
 
 version: '3'
 services:
-  portable-mysql57-centos7:
+  portable-mysql57:
     stdin_open: true
     tty: true
-    image: terwer/mysql57-centos7:5.7.38
-    container_name: portable-mysql57-centos7
+    image: terwer/mysql57:5.7.38
+    container_name: portable-mysql57
     build:
      context: .
      dockerfile: Dockerfile
