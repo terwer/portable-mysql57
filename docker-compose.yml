@@ -24,7 +24,6 @@ services:
      - ./data:/var/lib/mysql
      - ./init:/docker-entrypoint-initdb.d/
      - ./sql:/opt/
-     - ./mylog:/mylog/
     restart: "no"
     networks:
       - local-dev
