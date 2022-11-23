@@ -25,9 +25,3 @@ services:
      - ./init:/docker-entrypoint-initdb.d/
      - ./sql:/opt/
     restart: "no"
-    networks:
-      - local-dev
-
-networks:
-  local-dev:
-    external: true
