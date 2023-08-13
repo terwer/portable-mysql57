@@ -22,12 +22,7 @@ services:
      - "MYSQL_PASSWORD=123456"
     volumes:
      - ./data:/var/lib/mysql
+     - ./mysql-files:/var/lib/mysql-files/
      - ./init:/docker-entrypoint-initdb.d/
      - ./sql:/opt/
     restart: "no"
-    networks:
-      - local-dev
-
-networks:
-  local-dev:
-    external: true
