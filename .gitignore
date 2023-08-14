@@ -2,3 +2,4 @@ data
 mylog
 .DS_Store
 mysql-files
+.idea

@@ -4,25 +4,19 @@
 version: '3'
 services:
   portable-mysql57:
-    stdin_open: true
-    tty: true
-    image: terwer/mysql57:5.7.38
+    image: mysql/mysql-server:5.7.38
     container_name: portable-mysql57
-    build:
-     context: .
-     dockerfile: Dockerfile
+    privileged: true
     ports:
-     - "3306:3306"
+      - "3306:3306"
     environment:
-     - "TZ=Asia/Shanghai"
-     - "MYSQL_ROOT_PASSWORD=123456"
-     - "MYSQL_ROOT_HOST=%"
-     - "MYSQL_DATABASE=test"
-     - "MYSQL_USER=terwer"
-     - "MYSQL_PASSWORD=123456"
+      - "TZ=Asia/Shanghai"
+      - "MYSQL_ROOT_PASSWORD=123456"
+      - "MYSQL_ROOT_HOST=%"
+      - "MYSQL_DATABASE=test"
+      - "MYSQL_USER=terwer"
+      - "MYSQL_PASSWORD=123456"
     volumes:
-     - ./data:/var/lib/mysql
-     - ./mysql-files:/var/lib/mysql-files/
-     - ./init:/docker-entrypoint-initdb.d/
-     - ./sql:/opt/
+      - ./conf/my.cnf:/etc/my.cnf
+      - ./data:/var/data
     restart: "no"
