@@ -30,13 +30,13 @@ cat /var/log/mysqld.log
 Backup
 
 ```bash
-./backup.sh kms16_release
+./backup.sh mkpaas
 ```
 
 Restore
 
 ```bash
-./restore.sh ./backup/local_nfkj/backup_20230926174324.sql kms16_release
+./restore.sh ./backup/mkpaas/backup_20250327094018.sql mkpaas
 ```
 
 See also
@@ -55,4 +55,11 @@ docker inspect portable-mysql57 | grep IPAddres
 docker exec -it portable-mysql57 mysql -uroot -p123456
 show variables like 'character%';
 select now();
+```
+
+## Backup list
+
+```
+mk_dhgc
+mk_paas
 ```
